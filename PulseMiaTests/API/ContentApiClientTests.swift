@@ -12,13 +12,17 @@ import XCTest
 class ContentApiClientTests: XCTestCase {
     
     func test_completionHandler_called() {
-        var completionHandlerCalled = false
-        let sut = ContentAPIClient()
+        let e = expectation(description: "apiCall")
         
-        sut.getContents() {_ in
+        var completionHandlerCalled = false
+        let sut = ContentAPIClient(apiEngine: APIEngine())
+        
+        sut.getContents() { (_,_) in
             completionHandlerCalled = true
+            e.fulfill()
         }
         
+        waitForExpectations(timeout: 5.0, handler: nil)
         XCTAssertTrue(completionHandlerCalled)
     }
     

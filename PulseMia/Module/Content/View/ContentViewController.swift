@@ -35,6 +35,10 @@ class ContentViewController: UIViewController {
         title = viewModel.getTitle()
     }
     
+    private func reloadData() {
+        collectionView.reloadData()
+    }
+    
     //    MARK: Data
     
     private func configureData() {
@@ -44,6 +48,14 @@ class ContentViewController: UIViewController {
     
     func registerCells() {
         collectionView.register(ContentCell.self)
+    }
+    
+    private func getContents() {
+        viewModel.getData { [weak self] in
+            DispatchQueue.main.async {
+                self?.reloadData()
+            }
+        }
     }
     
 }

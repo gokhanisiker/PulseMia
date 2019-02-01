@@ -11,14 +11,16 @@ import XCTest
 
 class MockAPIClient: ContentAPIProtocol {
     
-    var contents = [String]()
+    var contents = [Content]()
+    var apiEngine: APIEngineProtocol
     
-    init(contents: [String]) {
+    init(contents: [Content], apiEngine: APIEngineProtocol) {
         self.contents = contents
+        self.apiEngine = apiEngine
     }
     
-    func getContents(completion: ContentsCompletionHandler) {
-        completion(contents)
+    func getContents(completion: @escaping ContentsCompletionHandler) {
+        completion(contents, nil)
     }
     
 }

@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let apiClient = ContentAPIClient()
+        let apiClient = ContentAPIClient(apiEngine: APIEngine())
         let viewModel = ContentViewModel(apiClient: apiClient)
         let viewController = ContentViewController(viewModel: viewModel)
         let navigationController = UINavigationController(rootViewController: viewController)

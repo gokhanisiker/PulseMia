@@ -21,14 +21,18 @@ class ContentViewModelTests: XCTestCase {
     }
     
     func test_viewModel_rendersTexts() {
-        let sut = makeSUT(["Content1", "Content2", "Content3"])
+        let content = Content(title: "Content1")
+        let content2 = Content(title: "Content2")
+        let content3 = Content(title: "Content3")
+        
+        let sut = makeSUT([content, content2, content3])
         XCTAssertEqual(sut.contents.count, sut.numberOfItems())
     }
     
     //MARK: - Helpers
     
-    private func makeSUT(_ contents: [String] = []) -> ContentViewModel {
-        let apiClient = ContentAPIClient()
+    private func makeSUT(_ contents: [Content] = []) -> ContentViewModel {
+        let apiClient = ContentAPIClient(apiEngine: APIEngine())
         let sut = ContentViewModel(apiClient: apiClient)
         return sut
     }

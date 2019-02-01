@@ -11,7 +11,7 @@ import Foundation
 class ContentViewModel {
     
     var apiClient: ContentAPIProtocol!
-    var contents: [String] = []
+    var contents: [Content] = []
 
     init(apiClient: ContentAPIProtocol) {
         self.apiClient = apiClient
@@ -26,12 +26,15 @@ class ContentViewModel {
     }
     
     func titleForCell(at indexPath: IndexPath) -> String {
-        return contents[indexPath.row]
+        return contents[indexPath.row].title
     }
     
-    func getData() {
-        apiClient.getContents() {[weak self] contentList in
-            self?.contents = contentList
+    func getData(completion: @escaping () -> Void) {
+        apiClient.getContents { [weak self] (contents, error) in
+            if error == nil {
+                self?.contents = contents
+            }
+            completion()
         }
     }
     

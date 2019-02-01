@@ -26,6 +26,12 @@
 		357916252204BD9700A3D97B /* ContentApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916242204BD9700A3D97B /* ContentApiClientTests.swift */; };
 		357916282204C11200A3D97B /* APIEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916272204C11200A3D97B /* APIEngineTests.swift */; };
 		3579162B2204C30200A3D97B /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3579162A2204C30200A3D97B /* MockAPIClient.swift */; };
+		3579162D2204C72000A3D97B /* APIEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3579162C2204C72000A3D97B /* APIEndPoints.swift */; };
+		357916302204F8AB00A3D97B /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3579162F2204F8AB00A3D97B /* AppConstants.swift */; };
+		357916332204F95200A3D97B /* ContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916322204F95200A3D97B /* ContentResponse.swift */; };
+		357916352204FF4800A3D97B /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916342204FF4800A3D97B /* APIError.swift */; };
+		357916372205065B00A3D97B /* ContentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916362205065B00A3D97B /* ContentExtension.swift */; };
+		3579163A220507CB00A3D97B /* Decoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35791639220507CB00A3D97B /* Decoders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +68,12 @@
 		357916242204BD9700A3D97B /* ContentApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentApiClientTests.swift; sourceTree = "<group>"; };
 		357916272204C11200A3D97B /* APIEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEngineTests.swift; sourceTree = "<group>"; };
 		3579162A2204C30200A3D97B /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
+		3579162C2204C72000A3D97B /* APIEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoints.swift; sourceTree = "<group>"; };
+		3579162F2204F8AB00A3D97B /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		357916322204F95200A3D97B /* ContentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentResponse.swift; sourceTree = "<group>"; };
+		357916342204FF4800A3D97B /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		357916362205065B00A3D97B /* ContentExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentExtension.swift; sourceTree = "<group>"; };
+		35791639220507CB00A3D97B /* Decoders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoders.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +233,8 @@
 		357916112204AE0A00A3D97B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				35791638220507B300A3D97B /* Helper */,
+				3579162E2204F89A00A3D97B /* Constant */,
 				357916122204AE2200A3D97B /* Extension */,
 			);
 			path = Common;
@@ -238,8 +252,10 @@
 		357916172204B7B300A3D97B /* API */ = {
 			isa = PBXGroup;
 			children = (
+				357916312204F94100A3D97B /* DataModel */,
 				3579161D2204B86500A3D97B /* Client */,
 				357916182204B7BE00A3D97B /* Engine */,
+				3579162C2204C72000A3D97B /* APIEndPoints.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -249,6 +265,7 @@
 			children = (
 				357916192204B7D700A3D97B /* APIEngine.swift */,
 				3579161B2204B82200A3D97B /* APIEngineProtocol.swift */,
+				357916342204FF4800A3D97B /* APIError.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -291,8 +308,33 @@
 			isa = PBXGroup;
 			children = (
 				3579162A2204C30200A3D97B /* MockAPIClient.swift */,
+				357916362205065B00A3D97B /* ContentExtension.swift */,
 			);
 			path = TestHelpers;
+			sourceTree = "<group>";
+		};
+		3579162E2204F89A00A3D97B /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				3579162F2204F8AB00A3D97B /* AppConstants.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		357916312204F94100A3D97B /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				357916322204F95200A3D97B /* ContentResponse.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		35791638220507B300A3D97B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				35791639220507CB00A3D97B /* Decoders.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,14 +443,19 @@
 			files = (
 				357916202204B87E00A3D97B /* ContentAPIClient.swift in Sources */,
 				3579161A2204B7D700A3D97B /* APIEngine.swift in Sources */,
+				3579162D2204C72000A3D97B /* APIEndPoints.swift in Sources */,
+				3579163A220507CB00A3D97B /* Decoders.swift in Sources */,
 				357915FF2204975200A3D97B /* ContentViewController.swift in Sources */,
 				357915FA2204890600A3D97B /* AppDelegate.swift in Sources */,
+				357916332204F95200A3D97B /* ContentResponse.swift in Sources */,
 				357916222204B8DE00A3D97B /* ContentAPIProtocol.swift in Sources */,
 				357916082204A92B00A3D97B /* ContentViewModel.swift in Sources */,
+				357916302204F8AB00A3D97B /* AppConstants.swift in Sources */,
 				3579161C2204B82200A3D97B /* APIEngineProtocol.swift in Sources */,
 				3579160F2204AD3300A3D97B /* ContentCell.swift in Sources */,
 				357916162204B6D800A3D97B /* UICollectionViewExtensions.swift in Sources */,
 				357916142204AE4D00A3D97B /* UICollectionViewCellExtensions.swift in Sources */,
+				357916352204FF4800A3D97B /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +466,7 @@
 				3579160B2204AA2800A3D97B /* ContentViewModelTests.swift in Sources */,
 				35791605220499A400A3D97B /* ContentViewControllerTests.swift in Sources */,
 				357916282204C11200A3D97B /* APIEngineTests.swift in Sources */,
+				357916372205065B00A3D97B /* ContentExtension.swift in Sources */,
 				357916252204BD9700A3D97B /* ContentApiClientTests.swift in Sources */,
 				3579162B2204C30200A3D97B /* MockAPIClient.swift in Sources */,
 			);

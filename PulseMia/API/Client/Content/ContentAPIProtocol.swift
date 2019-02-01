@@ -10,8 +10,8 @@ import Foundation
 
 protocol ContentAPIProtocol {
     
-    typealias ContentsCompletionHandler = ([String]) -> Void
+    typealias ContentsCompletionHandler = (([Content], Error?) -> Void)
     
-    func getContents(completion: (ContentsCompletionHandler))
+    func getContents(completion: @escaping (ContentsCompletionHandler))
     
 }

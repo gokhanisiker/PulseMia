@@ -24,17 +24,22 @@ class ContentViewControllerTests: XCTestCase {
     }
     
     func test_viewController_rendersContents() {
-        XCTAssertEqual(makeSUT(["Content1"]).numberOfItems(), 1)
-        XCTAssertEqual(makeSUT(["Content1", "Content2"]).numberOfItems(), 2)
-        XCTAssertEqual(makeSUT(["Content1", "Content2", "Content3"]).numberOfItems(), 3)
+        let content = Content(title: "Content1")
+        let content2 = Content(title: "Content2")
+        let content3 = Content(title: "Content3")
+        
+        XCTAssertEqual(makeSUT([content]).numberOfItems(), 1)
+        XCTAssertEqual(makeSUT([content, content2]).numberOfItems(), 2)
+        XCTAssertEqual(makeSUT([content, content2, content3]).numberOfItems(), 3)
     }
     
     //MARK: - Helpers
     
-    private func makeSUT(_ contents: [String] = []) -> ContentViewController {
-        let apiClient = MockAPIClient(contents: contents)
+    private func makeSUT(_ contents: [Content] = []) -> ContentViewController {
+        let apiEngine = APIEngine()
+        let apiClient = MockAPIClient(contents: contents, apiEngine: apiEngine)
         let viewModel = ContentViewModel(apiClient: apiClient)
-        viewModel.getData()
+       viewModel.contents = contents
         let sut = ContentViewController(viewModel: viewModel)
         _ = sut.view
         return sut
