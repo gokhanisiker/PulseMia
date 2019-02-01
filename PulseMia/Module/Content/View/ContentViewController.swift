@@ -10,7 +10,7 @@ import UIKit
 
 class ContentViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     var contents: [String] = []
     

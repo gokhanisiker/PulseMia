@@ -19,11 +19,11 @@ class ContentViewControllerTests: XCTestCase {
         XCTAssertNotNil(makeSUT())
     }
     
-    func test_collectionView_rendersWithoutMovies() {
+    func test_viewController_rendersWithoutContents() {
         XCTAssertEqual(makeSUT().numberOfItems(), 0)
     }
     
-    func test_collectionView_rendersMovies() {
+    func test_viewController_rendersContents() {
         XCTAssertEqual(makeSUT(["Content1"]).numberOfItems(), 1)
         XCTAssertEqual(makeSUT(["Content1", "Content2"]).numberOfItems(), 2)
         XCTAssertEqual(makeSUT(["Content1", "Content2", "Content3"]).numberOfItems(), 3)
@@ -39,18 +39,10 @@ class ContentViewControllerTests: XCTestCase {
     
 }
 
-fileprivate extension ContentViewController {
+private extension ContentViewController {
     
     func numberOfItems() -> Int {
-        return collectionView.numberOfItems(inSection: 0)
-    }
-    
-    func getCollectionView() -> UICollectionView {
-        return collectionView
-    }
-    
-    func reloadData() {
-        collectionView.reloadData()
+        return contents.count
     }
     
 }
