@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		357915D7220482A500A3D97B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357915D6220482A500A3D97B /* AppDelegate.swift */; };
-		357915D9220482A500A3D97B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357915D8220482A500A3D97B /* ViewController.swift */; };
-		357915DC220482A500A3D97B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 357915DA220482A500A3D97B /* Main.storyboard */; };
 		357915DE220482A600A3D97B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 357915DD220482A600A3D97B /* Assets.xcassets */; };
 		357915E1220482A600A3D97B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 357915DF220482A600A3D97B /* LaunchScreen.storyboard */; };
-		357915EC220482A600A3D97B /* PulseMiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357915EB220482A600A3D97B /* PulseMiaTests.swift */; };
+		357915FA2204890600A3D97B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357915F92204890600A3D97B /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,15 +24,12 @@
 
 /* Begin PBXFileReference section */
 		357915D3220482A500A3D97B /* PulseMia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulseMia.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		357915D6220482A500A3D97B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		357915D8220482A500A3D97B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		357915DB220482A500A3D97B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		357915DD220482A600A3D97B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		357915E0220482A600A3D97B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		357915E2220482A600A3D97B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		357915E7220482A600A3D97B /* PulseMiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PulseMiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		357915EB220482A600A3D97B /* PulseMiaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseMiaTests.swift; sourceTree = "<group>"; };
 		357915ED220482A600A3D97B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		357915F92204890600A3D97B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +71,8 @@
 		357915D5220482A500A3D97B /* PulseMia */ = {
 			isa = PBXGroup;
 			children = (
-				357915D6220482A500A3D97B /* AppDelegate.swift */,
-				357915D8220482A500A3D97B /* ViewController.swift */,
-				357915DA220482A500A3D97B /* Main.storyboard */,
-				357915DD220482A600A3D97B /* Assets.xcassets */,
-				357915DF220482A600A3D97B /* LaunchScreen.storyboard */,
-				357915E2220482A600A3D97B /* Info.plist */,
+				357915F7220488D600A3D97B /* Module */,
+				357915F62204889700A3D97B /* Resource */,
 			);
 			path = PulseMia;
 			sourceTree = "<group>";
@@ -90,10 +80,35 @@
 		357915EA220482A600A3D97B /* PulseMiaTests */ = {
 			isa = PBXGroup;
 			children = (
-				357915EB220482A600A3D97B /* PulseMiaTests.swift */,
 				357915ED220482A600A3D97B /* Info.plist */,
 			);
 			path = PulseMiaTests;
+			sourceTree = "<group>";
+		};
+		357915F62204889700A3D97B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				357915DD220482A600A3D97B /* Assets.xcassets */,
+				357915DF220482A600A3D97B /* LaunchScreen.storyboard */,
+				357915E2220482A600A3D97B /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		357915F7220488D600A3D97B /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				357915F8220488DC00A3D97B /* AppDelegate */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		357915F8220488DC00A3D97B /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				357915F92204890600A3D97B /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +161,7 @@
 				TargetAttributes = {
 					357915D2220482A500A3D97B = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					357915E6220482A600A3D97B = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -179,7 +195,6 @@
 			files = (
 				357915E1220482A600A3D97B /* LaunchScreen.storyboard in Resources */,
 				357915DE220482A600A3D97B /* Assets.xcassets in Resources */,
-				357915DC220482A500A3D97B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				357915D9220482A500A3D97B /* ViewController.swift in Sources */,
-				357915D7220482A500A3D97B /* AppDelegate.swift in Sources */,
+				357915FA2204890600A3D97B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +220,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				357915EC220482A600A3D97B /* PulseMiaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +234,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		357915DA220482A500A3D97B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				357915DB220482A500A3D97B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		357915DF220482A600A3D97B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -358,9 +363,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FB54U2F37R;
-				INFOPLIST_FILE = PulseMia/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PulseMia/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -368,6 +374,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tech.miapp.PulseMia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -377,9 +384,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FB54U2F37R;
-				INFOPLIST_FILE = PulseMia/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PulseMia/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
