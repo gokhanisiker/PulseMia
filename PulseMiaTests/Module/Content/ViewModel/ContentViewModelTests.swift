@@ -20,6 +20,11 @@ class ContentViewModelTests: XCTestCase {
         XCTAssertEqual(makeSUT().numberOfItems(), 0)
     }
     
+    func test_viewModel_rendersTexts() {
+        let sut = makeSUT(["Content1", "Content2", "Content3"])
+        XCTAssertEqual(sut.contents.count, sut.numberOfItems())
+    }
+    
     //MARK: - Helpers
     
     private func makeSUT(_ contents: [String] = []) -> ContentViewModel {

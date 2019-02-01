@@ -26,12 +26,17 @@ class ContentViewController: UIViewController {
         
         prepareUI()
         configureData()
+        registerCells()
     }
     
     //    MARK: UI
     
     private func prepareUI() {
         title = viewModel.getTitle()
+    }
+    
+    func registerCells() {
+        collectionView.register(UINib(nibName: ContentCell.identifier, bundle: nil), forCellWithReuseIdentifier: ContentCell.identifier)
     }
     
     //    MARK: Data
@@ -50,7 +55,10 @@ extension ContentViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCell.identifier, for: indexPath) as! ContentCell
+        let content = viewModel.titleForCell(at: indexPath)
+        cell.setup(with: content)
+        return cell
     }
     
 }

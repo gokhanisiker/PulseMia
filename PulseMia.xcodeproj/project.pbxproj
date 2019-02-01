@@ -15,6 +15,9 @@
 		35791605220499A400A3D97B /* ContentViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35791604220499A400A3D97B /* ContentViewControllerTests.swift */; };
 		357916082204A92B00A3D97B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916072204A92B00A3D97B /* ContentViewModel.swift */; };
 		3579160B2204AA2800A3D97B /* ContentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3579160A2204AA2800A3D97B /* ContentViewModelTests.swift */; };
+		3579160F2204AD3300A3D97B /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3579160D2204AD3300A3D97B /* ContentCell.swift */; };
+		357916102204AD3300A3D97B /* ContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3579160E2204AD3300A3D97B /* ContentCell.xib */; };
+		357916142204AE4D00A3D97B /* UICollectionViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916132204AE4D00A3D97B /* UICollectionViewCellExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		35791604220499A400A3D97B /* ContentViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewControllerTests.swift; sourceTree = "<group>"; };
 		357916072204A92B00A3D97B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		3579160A2204AA2800A3D97B /* ContentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModelTests.swift; sourceTree = "<group>"; };
+		3579160D2204AD3300A3D97B /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
+		3579160E2204AD3300A3D97B /* ContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCell.xib; sourceTree = "<group>"; };
+		357916132204AE4D00A3D97B /* UICollectionViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		357915D5220482A500A3D97B /* PulseMia */ = {
 			isa = PBXGroup;
 			children = (
+				357916112204AE0A00A3D97B /* Common */,
 				357915F7220488D600A3D97B /* Module */,
 				357915F62204889700A3D97B /* Resource */,
 			);
@@ -135,6 +142,7 @@
 		357915FC2204971900A3D97B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3579160C2204AD0600A3D97B /* Cell */,
 				357915FD2204975200A3D97B /* ContentViewController.swift */,
 				357915FE2204975200A3D97B /* ContentViewController.xib */,
 			);
@@ -180,6 +188,31 @@
 				3579160A2204AA2800A3D97B /* ContentViewModelTests.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3579160C2204AD0600A3D97B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3579160D2204AD3300A3D97B /* ContentCell.swift */,
+				3579160E2204AD3300A3D97B /* ContentCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		357916112204AE0A00A3D97B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				357916122204AE2200A3D97B /* Extension */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		357916122204AE2200A3D97B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				357916132204AE4D00A3D97B /* UICollectionViewCellExtensions.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +301,7 @@
 				357915E1220482A600A3D97B /* LaunchScreen.storyboard in Resources */,
 				357915DE220482A600A3D97B /* Assets.xcassets in Resources */,
 				357916002204975200A3D97B /* ContentViewController.xib in Resources */,
+				357916102204AD3300A3D97B /* ContentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +322,8 @@
 				357915FF2204975200A3D97B /* ContentViewController.swift in Sources */,
 				357915FA2204890600A3D97B /* AppDelegate.swift in Sources */,
 				357916082204A92B00A3D97B /* ContentViewModel.swift in Sources */,
+				3579160F2204AD3300A3D97B /* ContentCell.swift in Sources */,
+				357916142204AE4D00A3D97B /* UICollectionViewCellExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

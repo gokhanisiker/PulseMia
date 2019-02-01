@@ -24,4 +24,8 @@ class ContentViewModel {
         return contents.count
     }
     
+    func titleForCell(at indexPath: IndexPath) -> String {
+        return contents[indexPath.row]
+    }
+    
 }
