@@ -35,15 +35,15 @@ class ContentViewController: UIViewController {
         title = viewModel.getTitle()
     }
     
-    func registerCells() {
-        collectionView.register(UINib(nibName: ContentCell.identifier, bundle: nil), forCellWithReuseIdentifier: ContentCell.identifier)
-    }
-    
     //    MARK: Data
     
     private func configureData() {
         collectionView.delegate = self
         collectionView.dataSource = self
+    }
+    
+    func registerCells() {
+        collectionView.register(ContentCell.self)
     }
     
 }
