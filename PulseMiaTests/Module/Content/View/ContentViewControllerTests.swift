@@ -32,7 +32,9 @@ class ContentViewControllerTests: XCTestCase {
     //MARK: - Helpers
     
     private func makeSUT(_ contents: [String] = []) -> ContentViewController {
-        let viewModel = ContentViewModel(contents: contents)
+        let apiClient = MockAPIClient(contents: contents)
+        let viewModel = ContentViewModel(apiClient: apiClient)
+        viewModel.getData()
         let sut = ContentViewController(viewModel: viewModel)
         _ = sut.view
         return sut

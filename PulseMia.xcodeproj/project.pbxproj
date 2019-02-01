@@ -19,6 +19,13 @@
 		357916102204AD3300A3D97B /* ContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3579160E2204AD3300A3D97B /* ContentCell.xib */; };
 		357916142204AE4D00A3D97B /* UICollectionViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916132204AE4D00A3D97B /* UICollectionViewCellExtensions.swift */; };
 		357916162204B6D800A3D97B /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916152204B6D800A3D97B /* UICollectionViewExtensions.swift */; };
+		3579161A2204B7D700A3D97B /* APIEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916192204B7D700A3D97B /* APIEngine.swift */; };
+		3579161C2204B82200A3D97B /* APIEngineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3579161B2204B82200A3D97B /* APIEngineProtocol.swift */; };
+		357916202204B87E00A3D97B /* ContentAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3579161F2204B87E00A3D97B /* ContentAPIClient.swift */; };
+		357916222204B8DE00A3D97B /* ContentAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916212204B8DE00A3D97B /* ContentAPIProtocol.swift */; };
+		357916252204BD9700A3D97B /* ContentApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916242204BD9700A3D97B /* ContentApiClientTests.swift */; };
+		357916282204C11200A3D97B /* APIEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916272204C11200A3D97B /* APIEngineTests.swift */; };
+		3579162B2204C30200A3D97B /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3579162A2204C30200A3D97B /* MockAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +55,13 @@
 		3579160E2204AD3300A3D97B /* ContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCell.xib; sourceTree = "<group>"; };
 		357916132204AE4D00A3D97B /* UICollectionViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtensions.swift; sourceTree = "<group>"; };
 		357916152204B6D800A3D97B /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
+		357916192204B7D700A3D97B /* APIEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEngine.swift; sourceTree = "<group>"; };
+		3579161B2204B82200A3D97B /* APIEngineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEngineProtocol.swift; sourceTree = "<group>"; };
+		3579161F2204B87E00A3D97B /* ContentAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentAPIClient.swift; sourceTree = "<group>"; };
+		357916212204B8DE00A3D97B /* ContentAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentAPIProtocol.swift; sourceTree = "<group>"; };
+		357916242204BD9700A3D97B /* ContentApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentApiClientTests.swift; sourceTree = "<group>"; };
+		357916272204C11200A3D97B /* APIEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEngineTests.swift; sourceTree = "<group>"; };
+		3579162A2204C30200A3D97B /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +103,7 @@
 		357915D5220482A500A3D97B /* PulseMia */ = {
 			isa = PBXGroup;
 			children = (
+				357916172204B7B300A3D97B /* API */,
 				357916112204AE0A00A3D97B /* Common */,
 				357915F7220488D600A3D97B /* Module */,
 				357915F62204889700A3D97B /* Resource */,
@@ -99,6 +114,8 @@
 		357915EA220482A600A3D97B /* PulseMiaTests */ = {
 			isa = PBXGroup;
 			children = (
+				357916292204C2E000A3D97B /* TestHelpers */,
+				357916232204BD6D00A3D97B /* API */,
 				357916012204994D00A3D97B /* Module */,
 				357915ED220482A600A3D97B /* Info.plist */,
 			);
@@ -218,6 +235,66 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		357916172204B7B300A3D97B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3579161D2204B86500A3D97B /* Client */,
+				357916182204B7BE00A3D97B /* Engine */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		357916182204B7BE00A3D97B /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				357916192204B7D700A3D97B /* APIEngine.swift */,
+				3579161B2204B82200A3D97B /* APIEngineProtocol.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		3579161D2204B86500A3D97B /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				3579161E2204B86D00A3D97B /* Content */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		3579161E2204B86D00A3D97B /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				3579161F2204B87E00A3D97B /* ContentAPIClient.swift */,
+				357916212204B8DE00A3D97B /* ContentAPIProtocol.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		357916232204BD6D00A3D97B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				357916262204C10200A3D97B /* Engine */,
+				357916242204BD9700A3D97B /* ContentApiClientTests.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		357916262204C10200A3D97B /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				357916272204C11200A3D97B /* APIEngineTests.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		357916292204C2E000A3D97B /* TestHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				3579162A2204C30200A3D97B /* MockAPIClient.swift */,
+			);
+			path = TestHelpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -322,9 +399,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				357916202204B87E00A3D97B /* ContentAPIClient.swift in Sources */,
+				3579161A2204B7D700A3D97B /* APIEngine.swift in Sources */,
 				357915FF2204975200A3D97B /* ContentViewController.swift in Sources */,
 				357915FA2204890600A3D97B /* AppDelegate.swift in Sources */,
+				357916222204B8DE00A3D97B /* ContentAPIProtocol.swift in Sources */,
 				357916082204A92B00A3D97B /* ContentViewModel.swift in Sources */,
+				3579161C2204B82200A3D97B /* APIEngineProtocol.swift in Sources */,
 				3579160F2204AD3300A3D97B /* ContentCell.swift in Sources */,
 				357916162204B6D800A3D97B /* UICollectionViewExtensions.swift in Sources */,
 				357916142204AE4D00A3D97B /* UICollectionViewCellExtensions.swift in Sources */,
@@ -337,6 +418,9 @@
 			files = (
 				3579160B2204AA2800A3D97B /* ContentViewModelTests.swift in Sources */,
 				35791605220499A400A3D97B /* ContentViewControllerTests.swift in Sources */,
+				357916282204C11200A3D97B /* APIEngineTests.swift in Sources */,
+				357916252204BD9700A3D97B /* ContentApiClientTests.swift in Sources */,
+				3579162B2204C30200A3D97B /* MockAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

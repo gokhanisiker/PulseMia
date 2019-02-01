@@ -28,7 +28,8 @@ class ContentViewModelTests: XCTestCase {
     //MARK: - Helpers
     
     private func makeSUT(_ contents: [String] = []) -> ContentViewModel {
-        let sut = ContentViewModel(contents: contents)
+        let apiClient = ContentAPIClient()
+        let sut = ContentViewModel(apiClient: apiClient)
         return sut
     }
     
