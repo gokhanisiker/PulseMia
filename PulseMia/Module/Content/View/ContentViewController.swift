@@ -12,11 +12,11 @@ class ContentViewController: UIViewController {
 
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    var contents: [String] = []
+    var viewModel: ContentViewModel!
     
-    convenience init(contents: [String]) {
+    convenience init(viewModel: ContentViewModel) {
         self.init()
-        self.contents = contents
+        self.viewModel = viewModel
     }
     
     //    MARK: LifeCycle
@@ -31,7 +31,7 @@ class ContentViewController: UIViewController {
     //    MARK: UI
     
     private func prepareUI() {
-        title = "Contents"
+        title = viewModel.getTitle()
     }
     
     //    MARK: Data
@@ -46,7 +46,7 @@ class ContentViewController: UIViewController {
 extension ContentViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return contents.count
+        return viewModel.numberOfItems()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

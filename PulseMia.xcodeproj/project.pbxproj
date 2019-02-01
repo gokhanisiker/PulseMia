@@ -13,6 +13,8 @@
 		357915FF2204975200A3D97B /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357915FD2204975200A3D97B /* ContentViewController.swift */; };
 		357916002204975200A3D97B /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 357915FE2204975200A3D97B /* ContentViewController.xib */; };
 		35791605220499A400A3D97B /* ContentViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35791604220499A400A3D97B /* ContentViewControllerTests.swift */; };
+		357916082204A92B00A3D97B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916072204A92B00A3D97B /* ContentViewModel.swift */; };
+		3579160B2204AA2800A3D97B /* ContentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3579160A2204AA2800A3D97B /* ContentViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		357915FD2204975200A3D97B /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		357915FE2204975200A3D97B /* ContentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentViewController.xib; sourceTree = "<group>"; };
 		35791604220499A400A3D97B /* ContentViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewControllerTests.swift; sourceTree = "<group>"; };
+		357916072204A92B00A3D97B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		3579160A2204AA2800A3D97B /* ContentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 		357915FB2204958000A3D97B /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				357916062204A91500A3D97B /* ViewModel */,
 				357915FC2204971900A3D97B /* View */,
 			);
 			path = Content;
@@ -147,6 +152,7 @@
 		357916022204995500A3D97B /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				357916092204AA1200A3D97B /* ViewModel */,
 				357916032204997600A3D97B /* View */,
 			);
 			path = Content;
@@ -158,6 +164,22 @@
 				35791604220499A400A3D97B /* ContentViewControllerTests.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		357916062204A91500A3D97B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				357916072204A92B00A3D97B /* ContentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		357916092204AA1200A3D97B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3579160A2204AA2800A3D97B /* ContentViewModelTests.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +287,7 @@
 			files = (
 				357915FF2204975200A3D97B /* ContentViewController.swift in Sources */,
 				357915FA2204890600A3D97B /* AppDelegate.swift in Sources */,
+				357916082204A92B00A3D97B /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3579160B2204AA2800A3D97B /* ContentViewModelTests.swift in Sources */,
 				35791605220499A400A3D97B /* ContentViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

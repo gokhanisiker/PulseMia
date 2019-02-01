@@ -32,7 +32,8 @@ class ContentViewControllerTests: XCTestCase {
     //MARK: - Helpers
     
     private func makeSUT(_ contents: [String] = []) -> ContentViewController {
-        let sut = ContentViewController(contents: contents)
+        let viewModel = ContentViewModel(contents: contents)
+        let sut = ContentViewController(viewModel: viewModel)
         _ = sut.view
         return sut
     }
@@ -42,7 +43,7 @@ class ContentViewControllerTests: XCTestCase {
 private extension ContentViewController {
     
     func numberOfItems() -> Int {
-        return contents.count
+        return viewModel.numberOfItems()
     }
     
 }
