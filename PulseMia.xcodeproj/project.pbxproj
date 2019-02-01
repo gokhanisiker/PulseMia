@@ -10,6 +10,9 @@
 		357915DE220482A600A3D97B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 357915DD220482A600A3D97B /* Assets.xcassets */; };
 		357915E1220482A600A3D97B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 357915DF220482A600A3D97B /* LaunchScreen.storyboard */; };
 		357915FA2204890600A3D97B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357915F92204890600A3D97B /* AppDelegate.swift */; };
+		357915FF2204975200A3D97B /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357915FD2204975200A3D97B /* ContentViewController.swift */; };
+		357916002204975200A3D97B /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 357915FE2204975200A3D97B /* ContentViewController.xib */; };
+		35791605220499A400A3D97B /* ContentViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35791604220499A400A3D97B /* ContentViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +33,9 @@
 		357915E7220482A600A3D97B /* PulseMiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PulseMiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		357915ED220482A600A3D97B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		357915F92204890600A3D97B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		357915FD2204975200A3D97B /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		357915FE2204975200A3D97B /* ContentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentViewController.xib; sourceTree = "<group>"; };
+		35791604220499A400A3D97B /* ContentViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,7 @@
 		357915EA220482A600A3D97B /* PulseMiaTests */ = {
 			isa = PBXGroup;
 			children = (
+				357916012204994D00A3D97B /* Module */,
 				357915ED220482A600A3D97B /* Info.plist */,
 			);
 			path = PulseMiaTests;
@@ -98,6 +105,7 @@
 		357915F7220488D600A3D97B /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				357915FB2204958000A3D97B /* Content */,
 				357915F8220488DC00A3D97B /* AppDelegate */,
 			);
 			path = Module;
@@ -109,6 +117,47 @@
 				357915F92204890600A3D97B /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		357915FB2204958000A3D97B /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				357915FC2204971900A3D97B /* View */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		357915FC2204971900A3D97B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				357915FD2204975200A3D97B /* ContentViewController.swift */,
+				357915FE2204975200A3D97B /* ContentViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		357916012204994D00A3D97B /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				357916022204995500A3D97B /* Content */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		357916022204995500A3D97B /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				357916032204997600A3D97B /* View */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		357916032204997600A3D97B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				35791604220499A400A3D97B /* ContentViewControllerTests.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +214,7 @@
 					};
 					357915E6220482A600A3D97B = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 						TestTargetID = 357915D2220482A500A3D97B;
 					};
 				};
@@ -195,6 +245,7 @@
 			files = (
 				357915E1220482A600A3D97B /* LaunchScreen.storyboard in Resources */,
 				357915DE220482A600A3D97B /* Assets.xcassets in Resources */,
+				357916002204975200A3D97B /* ContentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				357915FF2204975200A3D97B /* ContentViewController.swift in Sources */,
 				357915FA2204890600A3D97B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35791605220499A400A3D97B /* ContentViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +460,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FB54U2F37R;
 				INFOPLIST_FILE = PulseMiaTests/Info.plist;
@@ -417,6 +471,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = tech.miapp.PulseMiaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PulseMia.app/PulseMia";
@@ -428,6 +483,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FB54U2F37R;
 				INFOPLIST_FILE = PulseMiaTests/Info.plist;
