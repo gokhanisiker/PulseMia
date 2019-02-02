@@ -10,8 +10,10 @@ import UIKit
 
 class ContentCell: UICollectionViewCell {
 
-    @IBOutlet weak var posterImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet private weak var posterImageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var subtitleLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,9 +22,11 @@ class ContentCell: UICollectionViewCell {
         clipsToBounds = true
     }
     
-    func setup(with content: String) {
-        titleLabel.text = "Content.text"
-        posterImageView.image = nil
+    func setup(with content: Content) {
+        titleLabel.text = content.title
+        posterImageView.setImage(with: content.posterUrl())
+        subtitleLabel.text = content.subtitle
+        dateLabel.text = content.date
     }
     
 }

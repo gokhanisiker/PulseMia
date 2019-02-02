@@ -22,11 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="196" height="260"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3KS-Nd-n3Z">
-                        <rect key="frame" x="0.0" y="228.5" width="196" height="31.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="196" height="31.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WQ-WU-5yR">
                                 <rect key="frame" x="4" y="4" width="188" height="23.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -39,20 +39,64 @@
                             <constraint firstItem="9WQ-WU-5yR" firstAttribute="leading" secondItem="3KS-Nd-n3Z" secondAttribute="leading" constant="4" id="tx2-Jd-ZGq"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zEE-8z-kIM">
+                        <rect key="frame" x="0.0" y="232.5" width="196" height="27.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOR-gU-rsF">
+                                <rect key="frame" x="4" y="4" width="188" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="NOR-gU-rsF" secondAttribute="trailing" constant="4" id="3Z2-Us-6PV"/>
+                            <constraint firstItem="NOR-gU-rsF" firstAttribute="leading" secondItem="zEE-8z-kIM" secondAttribute="leading" constant="4" id="UTP-Xy-Mkk"/>
+                            <constraint firstAttribute="bottom" secondItem="NOR-gU-rsF" secondAttribute="bottom" constant="4" id="WNV-6c-uBO"/>
+                            <constraint firstItem="NOR-gU-rsF" firstAttribute="top" secondItem="zEE-8z-kIM" secondAttribute="top" constant="4" id="tWh-IM-XSv"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYa-90-nUp">
+                        <rect key="frame" x="0.0" y="204.5" width="196" height="28.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQl-Rz-AAX">
+                                <rect key="frame" x="4" y="4" width="188" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xQl-Rz-AAX" firstAttribute="top" secondItem="cYa-90-nUp" secondAttribute="top" constant="4" id="IZU-Li-kX2"/>
+                            <constraint firstAttribute="bottom" secondItem="xQl-Rz-AAX" secondAttribute="bottom" constant="4" id="nA6-HB-gpr"/>
+                            <constraint firstAttribute="trailing" secondItem="xQl-Rz-AAX" secondAttribute="trailing" constant="4" id="vUF-Yp-sa9"/>
+                            <constraint firstItem="xQl-Rz-AAX" firstAttribute="leading" secondItem="cYa-90-nUp" secondAttribute="leading" constant="4" id="vyE-EE-lXb"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="3KS-Nd-n3Z" firstAttribute="bottom" secondItem="ny2-C0-Edv" secondAttribute="bottom" id="Dtc-Cy-ahO"/>
+                <constraint firstItem="3KS-Nd-n3Z" firstAttribute="top" secondItem="ny2-C0-Edv" secondAttribute="top" id="Dtc-Cy-ahO"/>
+                <constraint firstItem="cYa-90-nUp" firstAttribute="bottom" secondItem="zEE-8z-kIM" secondAttribute="top" id="K9H-ya-bHi"/>
                 <constraint firstItem="ny2-C0-Edv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MeZ-cq-POe"/>
                 <constraint firstAttribute="trailing" secondItem="ny2-C0-Edv" secondAttribute="trailing" id="Mgj-tZ-iY6"/>
+                <constraint firstAttribute="bottom" secondItem="zEE-8z-kIM" secondAttribute="bottom" id="Qcv-53-PYp"/>
                 <constraint firstAttribute="bottom" secondItem="ny2-C0-Edv" secondAttribute="bottom" id="S8g-wD-tXe"/>
                 <constraint firstItem="ny2-C0-Edv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bFv-t1-kdh"/>
+                <constraint firstItem="zEE-8z-kIM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bU9-L1-xJh"/>
+                <constraint firstAttribute="trailing" secondItem="cYa-90-nUp" secondAttribute="trailing" id="cBq-Gh-ak5"/>
+                <constraint firstAttribute="trailing" secondItem="zEE-8z-kIM" secondAttribute="trailing" id="hLu-RT-bAJ"/>
                 <constraint firstItem="3KS-Nd-n3Z" firstAttribute="trailing" secondItem="ny2-C0-Edv" secondAttribute="trailing" id="l0k-bc-xsd"/>
                 <constraint firstItem="3KS-Nd-n3Z" firstAttribute="leading" secondItem="ny2-C0-Edv" secondAttribute="leading" id="zYH-e3-bjE"/>
+                <constraint firstItem="cYa-90-nUp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zuE-KS-AIu"/>
             </constraints>
             <size key="customSize" width="196" height="260"/>
             <connections>
+                <outlet property="dateLabel" destination="NOR-gU-rsF" id="CKr-EU-L48"/>
                 <outlet property="posterImageView" destination="ny2-C0-Edv" id="aF7-WB-r6c"/>
+                <outlet property="subtitleLabel" destination="xQl-Rz-AAX" id="Z8Q-dx-udd"/>
                 <outlet property="titleLabel" destination="9WQ-WU-5yR" id="TPg-im-52d"/>
             </connections>
             <point key="canvasLocation" x="-128" y="27"/>

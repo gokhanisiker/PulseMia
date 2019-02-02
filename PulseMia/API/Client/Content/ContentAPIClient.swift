@@ -29,7 +29,7 @@ class ContentAPIClient: ContentAPIProtocol {
             }
             
             guard let data = data else {
-                completion([], nil)
+                completion([], APIError.invalidData)
                 return
             }
             

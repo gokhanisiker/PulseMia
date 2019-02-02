@@ -29,6 +29,10 @@ class ContentViewModel {
         return contents[indexPath.row].title
     }
     
+    func getContent(at indexPath: IndexPath) -> Content {
+        return contents[indexPath.row]
+    }
+    
     func getData(completion: @escaping () -> Void) {
         apiClient.getContents { [weak self] (contents, error) in
             if error == nil {

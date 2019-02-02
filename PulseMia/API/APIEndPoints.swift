@@ -12,6 +12,6 @@ enum APIEndPoints: String {
     case contents = "contentList.json"
     
     func buildUrl() -> String {
-        return "\(AppContants.API.BaseURL)\(self.rawValue)"
+        return "\(AppConstants.API.BaseURL)\(self.rawValue)"
     }
 }

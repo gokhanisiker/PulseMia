@@ -2,19 +2,23 @@
 //  ContentResponse.swift
 //  PulseMia
 //
-//  Created by Gökhan Işıker on 01/02/2019.
+//  Created by Gokhan Isiker on 01/02/2019.
 //  Copyright © 2019 Gokhan Isiker. All rights reserved.
 //
 
 import Foundation
 
-struct ContentResponse: Decodable {
+struct ContentResponse: Codable {
     var items: [Content]
 }
 
-struct Content: Decodable {
+struct Content: Codable {
     var id: Int
     var title: String
-    var subTitle: String
-    var date: Date
+    var subtitle: String
+    var date: String
+    
+    func posterUrl() -> String {
+        return AppConstants.API.PosterURL
+    }
 }

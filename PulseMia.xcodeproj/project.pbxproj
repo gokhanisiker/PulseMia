@@ -32,6 +32,7 @@
 		357916352204FF4800A3D97B /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916342204FF4800A3D97B /* APIError.swift */; };
 		357916372205065B00A3D97B /* ContentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916362205065B00A3D97B /* ContentExtension.swift */; };
 		3579163A220507CB00A3D97B /* Decoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35791639220507CB00A3D97B /* Decoders.swift */; };
+		3579163C22050FFA00A3D97B /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3579163B22050FFA00A3D97B /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		357916342204FF4800A3D97B /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		357916362205065B00A3D97B /* ContentExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentExtension.swift; sourceTree = "<group>"; };
 		35791639220507CB00A3D97B /* Decoders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoders.swift; sourceTree = "<group>"; };
+		3579163B22050FFA00A3D97B /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 			children = (
 				357916132204AE4D00A3D97B /* UICollectionViewCellExtensions.swift */,
 				357916152204B6D800A3D97B /* UICollectionViewExtensions.swift */,
+				3579163B22050FFA00A3D97B /* UIImageView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				3579162D2204C72000A3D97B /* APIEndPoints.swift in Sources */,
 				3579163A220507CB00A3D97B /* Decoders.swift in Sources */,
 				357915FF2204975200A3D97B /* ContentViewController.swift in Sources */,
+				3579163C22050FFA00A3D97B /* UIImageView.swift in Sources */,
 				357915FA2204890600A3D97B /* AppDelegate.swift in Sources */,
 				357916332204F95200A3D97B /* ContentResponse.swift in Sources */,
 				357916222204B8DE00A3D97B /* ContentAPIProtocol.swift in Sources */,
