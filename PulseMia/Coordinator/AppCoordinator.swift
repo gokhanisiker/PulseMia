@@ -44,7 +44,9 @@ class AppCoordinator: AppCoordinatorProtocol {
 extension AppCoordinator: ContentViewControllerDelegate {
     
     func showDetails(of content: Content, from viewController: UIViewController) {
-        viewController.show(UIViewController(), sender: nil)
+        let apiClient = ContentAPIClient(apiEngine: APIEngine())
+        let viewModel = ContentDetailsViewModel(apiClient: apiClient, content: content)
+        viewController.show(ContentDetailsViewController(viewModel: viewModel), sender: nil)
     }
     
 }

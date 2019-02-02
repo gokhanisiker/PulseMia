@@ -42,4 +42,8 @@ class ContentViewModel {
         }
     }
     
+    func getDataSource(didSelectItemHandler: @escaping ContentDataSource.ContentDidSelectItemHandler) -> ContentDataSource {
+        return ContentDataSource(with: contents, didSelectItemHandler: didSelectItemHandler)
+    }
+    
 }

@@ -16,9 +16,15 @@ protocol ContentProtocol: Codable {
 }
 
 extension ContentProtocol {
+    
     func getPosterUrl() -> String {
         return AppConstants.API.PosterURL
     }
+    
+    func getPosterDetailUrl() -> String {
+        return AppConstants.API.PosterDetailURL
+    }
+    
 }
 
 struct Content: ContentProtocol {

@@ -10,6 +10,7 @@ import UIKit
 
 class ContentDetailsViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
     var viewModel: ContentDetailsViewModel!
     
     convenience init(viewModel: ContentDetailsViewModel) {
@@ -30,10 +31,16 @@ class ContentDetailsViewController: UIViewController {
     
     private func prepareUI() {
         title = viewModel.getTitle()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 200
+        tableView.register(cell: ContentDetailsHeaderCell.self)
     }
     
     private func reloadPage() {
-        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.reloadData()
     }
     
     //    MARK: Data
@@ -55,7 +62,9 @@ extension ContentDetailsViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: ContentDetailsHeaderCell.identifier, for: indexPath) as! ContentDetailsHeaderCell
+        cell.setup(with: viewModel.getContentDetatils())
+        return cell
     }
     
 }

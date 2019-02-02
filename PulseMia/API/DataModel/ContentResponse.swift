@@ -11,7 +11,3 @@ import Foundation
 struct ContentResponse: Codable {
     var items: [Content]
 }
-
-struct ContentDetailsResponse: Codable {
-    var item: ContentDetails
-}

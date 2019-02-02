@@ -15,6 +15,10 @@ class ContentDetailsViewControllerTests: XCTestCase {
         XCTAssertEqual(makeSUT().navigationItem.title, "Content Details")
     }
     
+    func test_viewDidLoad_initiatesViewModel() {
+        XCTAssertNotNil(makeSUT().viewModel)
+    }
+    
     //MARK: - Helpers
     
     private func makeSUT(contentDetails: ContentDetails = ContentDetails(body: "")) -> ContentDetailsViewController {
@@ -28,8 +32,10 @@ class ContentDetailsViewControllerTests: XCTestCase {
     
 }
 
-extension ContentDetails {
+fileprivate extension ContentDetails {
+    
     init(body: String) {
-        self.init(id: 35, title: "", subtitle: "", date: "", body: "Article Body")
+        self.init(id: 35, title: "", subtitle: "", date: "", body: body)
     }
 }
+

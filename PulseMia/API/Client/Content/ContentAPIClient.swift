@@ -59,8 +59,8 @@ class ContentAPIClient: ContentAPIProtocol {
                 return
             }
             
-            if let response = try? JSONDecoder().decode(ContentDetails.self, from: data) {
-                completion(response, nil)
+            if let response = try? JSONDecoder().decode(ContentDetailsResponse.self, from: data) {
+                completion(response.item, nil)
                 return
             } else {
                 completion(nil, APIError.invalidResponse)

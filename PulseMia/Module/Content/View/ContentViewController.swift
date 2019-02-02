@@ -18,6 +18,7 @@ class ContentViewController: UIViewController {
     
     var viewModel: ContentViewModel!
     weak var delegate: ContentViewControllerDelegate!
+    private var dataSource: ContentDataSource?
     
     convenience init(viewModel: ContentViewModel) {
         self.init()
@@ -30,7 +31,6 @@ class ContentViewController: UIViewController {
         super.viewDidLoad()
         
         prepareUI()
-        configureData()
         registerCells()
         getContents()
     }
@@ -42,15 +42,16 @@ class ContentViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
     }
     
-    private func reloadData() {
-        collectionView.reloadData()
-    }
-    
     //    MARK: Data
     
-    private func configureData() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
+    private func reloadData() {
+        dataSource = viewModel.getDataSource { [weak self] (content) in
+            self?.didSelect(content: content)
+        }
+        
+        collectionView.dataSource = dataSource
+        collectionView.delegate = dataSource
+        collectionView.reloadData()
     }
     
     private func registerCells() {
@@ -65,51 +66,8 @@ class ContentViewController: UIViewController {
         }
     }
     
-}
-
-extension ContentViewController: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfItems()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCell.identifier, for: indexPath) as! ContentCell
-        let content = viewModel.getContent(at: indexPath)
-        cell.setup(with: content)
-        return cell
-    }
-
-}
-
-extension ContentViewController: UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let content = viewModel.getContent(at: indexPath)
+    private func didSelect(content: Content) {
         delegate.showDetails(of: content, from: self)
-    }
-    
-}
-
-extension ContentViewController: UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = (collectionView.bounds.width - CGFloat(AppConstants.ContentCollection.HorizontalSpaceBetweenItems * 3)) / 2
-        return CGSize(width: width, height: width * CGFloat(AppConstants.ContentCollection.PosterImageRatio))
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return CGFloat(AppConstants.ContentCollection.VerticleSpaceBetweenItems)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return CGFloat(AppConstants.ContentCollection.HorizontalSpaceBetweenItems) / 2
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let leftMargin = CGFloat(AppConstants.ContentCollection.HorizontalSpaceBetweenItems)
-        let topMargin = CGFloat(AppConstants.ContentCollection.VerticleSpaceBetweenItems)
-        return UIEdgeInsetsMake(topMargin, leftMargin, topMargin, leftMargin)
     }
     
 }
