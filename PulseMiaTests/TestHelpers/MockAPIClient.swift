@@ -23,4 +23,7 @@ class MockAPIClient: ContentAPIProtocol {
         completion(contents, nil)
     }
     
+    func getDetails(of content: Content, completion: @escaping (ContentAPIProtocol.ContentDetailsCompletionHandler)) {
+    }
+    
 }

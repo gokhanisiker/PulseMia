@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol ContentViewControllerDelegate: class {
+    func showDetails(of content: Content, from viewController: UIViewController)
+}
+
 class ContentViewController: UIViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
     var viewModel: ContentViewModel!
+    weak var delegate: ContentViewControllerDelegate!
     
     convenience init(viewModel: ContentViewModel) {
         self.init()
@@ -34,6 +39,7 @@ class ContentViewController: UIViewController {
     
     private func prepareUI() {
         title = viewModel.getTitle()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
     }
     
     private func reloadData() {
@@ -61,7 +67,7 @@ class ContentViewController: UIViewController {
     
 }
 
-extension ContentViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension ContentViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItems()
@@ -73,6 +79,19 @@ extension ContentViewController: UICollectionViewDataSource, UICollectionViewDel
         cell.setup(with: content)
         return cell
     }
+
+}
+
+extension ContentViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let content = viewModel.getContent(at: indexPath)
+        delegate.showDetails(of: content, from: self)
+    }
+    
+}
+
+extension ContentViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = (collectionView.bounds.width - CGFloat(AppConstants.ContentCollection.HorizontalSpaceBetweenItems * 3)) / 2

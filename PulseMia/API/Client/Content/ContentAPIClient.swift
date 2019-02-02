@@ -22,7 +22,7 @@ class ContentAPIClient: ContentAPIProtocol {
             return
         }
         
-        apiEngine.get(url: url) {(data, error) in
+        apiEngine.get(url: url) { (data, error) in
             if let error = error {
                 completion([], error)
                 return
@@ -40,6 +40,34 @@ class ContentAPIClient: ContentAPIProtocol {
                 completion([], APIError.invalidResponse)
             }
         }
+    }
+    
+    func getDetails(of content: Content, completion: @escaping ContentDetailsCompletionHandler) {
+        guard let url = URL(string: APIEndPoints.contentDetails(content: content).buildUrl()) else {
+            completion(nil, APIError.invalidURL)
+            return
+        }
+        
+        apiEngine.get(url: url) { (data, error) in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else {
+                completion(nil, APIError.invalidData)
+                return
+            }
+            
+            if let response = try? JSONDecoder().decode(ContentDetails.self, from: data) {
+                completion(response, nil)
+                return
+            } else {
+                completion(nil, APIError.invalidResponse)
+            }
+            
+        }
+        
     }
     
 }

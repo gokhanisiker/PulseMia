@@ -8,10 +8,20 @@
 
 import Foundation
 
-enum APIEndPoints: String {
-    case contents = "contentList.json"
+enum APIEndPoints {
+    case contents
+    case contentDetails(content: Content)
+    
+    func endPoint() -> String {
+        switch self {
+        case .contents:
+            return "contentList.json"
+        case .contentDetails(let content):
+            return "content/\(content.id).json"
+        }
+    }
     
     func buildUrl() -> String {
-        return "\(AppConstants.API.BaseURL)\(self.rawValue)"
+        return "\(AppConstants.API.BaseURL)\(endPoint())"
     }
 }

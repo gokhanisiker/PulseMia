@@ -12,13 +12,6 @@ struct ContentResponse: Codable {
     var items: [Content]
 }
 
-struct Content: Codable {
-    var id: Int
-    var title: String
-    var subtitle: String
-    var date: String
-    
-    func posterUrl() -> String {
-        return AppConstants.API.PosterURL
-    }
+struct ContentDetailsResponse: Codable {
+    var item: ContentDetails
 }

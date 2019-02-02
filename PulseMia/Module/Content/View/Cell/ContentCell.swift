@@ -24,7 +24,7 @@ class ContentCell: UICollectionViewCell {
     
     func setup(with content: Content) {
         titleLabel.text = content.title
-        posterImageView.setImage(with: content.posterUrl())
+        posterImageView.setImage(with: content.getPosterUrl())
         subtitleLabel.text = content.subtitle
         dateLabel.text = content.date
     }
