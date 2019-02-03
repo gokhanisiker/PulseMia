@@ -32,10 +32,15 @@ class ContentDetailsViewControllerTests: XCTestCase {
     
 }
 
-fileprivate extension ContentDetails {
+extension ContentDetails {
     
     init(body: String) {
         self.init(id: 35, title: "", subtitle: "", date: "", body: body)
     }
+    
+    init(title: String) {
+        self.init(id: 0, title: title, subtitle: "Mock Subtitle", date: "12/02/2019", body: "body")
+    }
+    
 }
 

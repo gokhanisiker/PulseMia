@@ -16,3 +16,12 @@ extension Content {
     }
     
 }
+
+extension Content: Equatable {
+    
+    public static func == (lhs: Content, rhs: Content) -> Bool {
+        return lhs.title == rhs.title
+    }
+
+}
+

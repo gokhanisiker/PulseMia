@@ -8,7 +8,18 @@
 
 import Foundation
 
-class ContentViewModel {
+protocol ContentViewModelProtocol {
+    
+    func getTitle() -> String
+    func numberOfItems() -> Int
+    func titleForCell(at indexPath: IndexPath) -> String
+    func getContent(at indexPath: IndexPath) -> Content
+    func getData(completion: @escaping () -> Void)
+    func getDataSource(didSelectItemHandler: @escaping ContentDataSource.ContentDidSelectItemHandler) -> ContentDataSource
+    
+}
+
+class ContentViewModel: ContentViewModelProtocol {
     
     var apiClient: ContentAPIProtocol!
     var contents: [Content] = []

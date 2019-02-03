@@ -48,6 +48,7 @@
 		357916632206451800A3D97B /* ContentDetailsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916612206451800A3D97B /* ContentDetailsHeaderCell.swift */; };
 		357916642206451800A3D97B /* ContentDetailsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 357916622206451800A3D97B /* ContentDetailsHeaderCell.xib */; };
 		357916662206501300A3D97B /* ContentDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357916652206501300A3D97B /* ContentDetailsResponse.swift */; };
+		3579166922066F3000A3D97B /* ContentDetailsHeaderCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3579166822066F3000A3D97B /* ContentDetailsHeaderCellTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		357916612206451800A3D97B /* ContentDetailsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailsHeaderCell.swift; sourceTree = "<group>"; };
 		357916622206451800A3D97B /* ContentDetailsHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentDetailsHeaderCell.xib; sourceTree = "<group>"; };
 		357916652206501300A3D97B /* ContentDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailsResponse.swift; sourceTree = "<group>"; };
+		3579166822066F3000A3D97B /* ContentDetailsHeaderCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailsHeaderCellTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,6 +445,7 @@
 		35791654220617F200A3D97B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3579166722066F0500A3D97B /* Cell */,
 				3579165722061B6300A3D97B /* ContentDetailsViewControllerTests.swift */,
 			);
 			path = View;
@@ -461,6 +464,14 @@
 			children = (
 				357916612206451800A3D97B /* ContentDetailsHeaderCell.swift */,
 				357916622206451800A3D97B /* ContentDetailsHeaderCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		3579166722066F0500A3D97B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3579166822066F3000A3D97B /* ContentDetailsHeaderCellTests.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -613,6 +624,7 @@
 				357916252204BD9700A3D97B /* ContentApiClientTests.swift in Sources */,
 				3579162B2204C30200A3D97B /* MockAPIClient.swift in Sources */,
 				357916422205FBEA00A3D97B /* AppCoordinatorTests.swift in Sources */,
+				3579166922066F3000A3D97B /* ContentDetailsHeaderCellTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,7 +2,7 @@
 //  UITableViewCellExtension.swift
 //  PulseMia
 //
-//  Created by Gökhan Işıker on 02/02/2019.
+//  Created by Gokhan Isiker on 02/02/2019.
 //  Copyright © 2019 Gokhan Isiker. All rights reserved.
 //
 

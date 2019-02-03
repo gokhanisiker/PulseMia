@@ -8,7 +8,15 @@
 
 import Foundation
 
-class ContentDetailsViewModel {
+protocol ContentDetailsViewModelProtocol {
+    
+    func getTitle() -> String
+    func getContentDetatils() -> ContentDetails
+    func getData(completion: @escaping () -> Void)
+    
+}
+
+class ContentDetailsViewModel: ContentDetailsViewModelProtocol {
     
     private var apiClient: ContentAPIProtocol!
     private var content: Content!
@@ -25,6 +33,10 @@ class ContentDetailsViewModel {
     
     func getContentDetatils() -> ContentDetails {
         return contentDetails
+    }
+    
+    func getContent() -> Content {
+        return content
     }
     
     func getData(completion: @escaping () -> Void) {

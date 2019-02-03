@@ -16,11 +16,11 @@ class ContentViewController: UIViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    var viewModel: ContentViewModel!
+    var viewModel: ContentViewModelProtocol!
     weak var delegate: ContentViewControllerDelegate!
     private var dataSource: ContentDataSource?
     
-    convenience init(viewModel: ContentViewModel) {
+    convenience init(viewModel: ContentViewModelProtocol) {
         self.init()
         self.viewModel = viewModel
     }

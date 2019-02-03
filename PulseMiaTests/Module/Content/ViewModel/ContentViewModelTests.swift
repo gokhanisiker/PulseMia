@@ -29,11 +29,19 @@ class ContentViewModelTests: XCTestCase {
         XCTAssertEqual(sut.contents.count, sut.numberOfItems())
     }
     
+    func test_viewModel_getsCorrectContents() {
+        let sut = makeSUT([Content(title: "Content1"), Content(title: "Content2")])
+        
+        XCTAssertEqual(sut.getContent(at: IndexPath(row: 0, section: 0)), sut.contents[0])
+        XCTAssertEqual(sut.getContent(at: IndexPath(row: 1, section: 0)), sut.contents[1])
+    }
+    
     //MARK: - Helpers
     
     private func makeSUT(_ contents: [Content] = []) -> ContentViewModel {
         let apiClient = ContentAPIClient(apiEngine: APIEngine())
         let sut = ContentViewModel(apiClient: apiClient)
+        sut.contents = contents
         return sut
     }
     

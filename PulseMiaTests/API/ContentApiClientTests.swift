@@ -26,4 +26,19 @@ class ContentApiClientTests: XCTestCase {
         XCTAssertTrue(completionHandlerCalled)
     }
     
+    func test_getDetailscompletionHandler_called() {
+        let e = expectation(description: "apiCall")
+        
+        var completionHandlerCalled = false
+        let sut = ContentAPIClient(apiEngine: APIEngine())
+        
+        sut.getDetails(of: Content(title: "Content1")) { (_,_) in
+            completionHandlerCalled = true
+            e.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5.0, handler: nil)
+        XCTAssertTrue(completionHandlerCalled)
+    }
+    
 }

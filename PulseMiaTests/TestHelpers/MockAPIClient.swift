@@ -12,6 +12,7 @@ import XCTest
 class MockAPIClient: ContentAPIProtocol {
     
     var contents = [Content]()
+    var contentDetails: ContentDetails!
     var apiEngine: APIEngineProtocol
     
     init(contents: [Content], apiEngine: APIEngineProtocol) {
@@ -24,6 +25,7 @@ class MockAPIClient: ContentAPIProtocol {
     }
     
     func getDetails(of content: Content, completion: @escaping (ContentAPIProtocol.ContentDetailsCompletionHandler)) {
+        completion(contentDetails, nil)
     }
     
 }
