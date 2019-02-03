@@ -44,7 +44,7 @@ class ContentViewController: UIViewController {
     
     //    MARK: Data
     
-    private func reloadData() {
+    public func reloadData() {
         dataSource = viewModel.getDataSource { [weak self] (content) in
             self?.didSelect(content: content)
         }
@@ -68,6 +68,10 @@ class ContentViewController: UIViewController {
     
     private func didSelect(content: Content) {
         delegate.showDetails(of: content, from: self)
+    }
+    
+    deinit {
+        print("\(String(describing: self)) deinited")
     }
     
 }

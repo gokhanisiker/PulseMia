@@ -10,7 +10,7 @@ import UIKit
 
 class ContentDetailsViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     var viewModel: ContentDetailsViewModel!
     
     convenience init(viewModel: ContentDetailsViewModel) {
@@ -37,7 +37,7 @@ class ContentDetailsViewController: UIViewController {
         tableView.register(cell: ContentDetailsHeaderCell.self)
     }
     
-    private func reloadPage() {
+    public func reloadData() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
@@ -48,11 +48,14 @@ class ContentDetailsViewController: UIViewController {
     private func getContentDetails() {
         viewModel.getData { [weak self] in
             DispatchQueue.main.async {
-                self?.reloadPage()
+                self?.reloadData()
             }
         }
     }
 
+    deinit {
+        print("\(String(describing: self)) deinited")
+    }
 }
 
 extension ContentDetailsViewController: UITableViewDelegate, UITableViewDataSource {

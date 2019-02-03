@@ -42,6 +42,7 @@ class ContentViewControllerTests: XCTestCase {
        viewModel.contents = contents
         let sut = ContentViewController(viewModel: viewModel)
         _ = sut.view
+        sut.reloadData()
         return sut
     }
     
