@@ -13,7 +13,7 @@ class ContentDataSource: NSObject {
     typealias ContentDidSelectItemHandler = (Content) -> ()
     
     var contents: [Content] = []
-    var didSelectItemHandler: (Content) -> Void
+    var didSelectItemHandler: ContentDidSelectItemHandler
     
     init(with contents: [Content], didSelectItemHandler: @escaping ContentDidSelectItemHandler) {
         self.contents = contents

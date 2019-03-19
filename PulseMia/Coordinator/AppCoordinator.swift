@@ -16,7 +16,7 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     var rootViewController: UINavigationController!
     var apiEngine: APIEngine!
-    let apiClient: ContentAPIClient!
+    let apiClient: ContentAPIProtocol!
     let window: UIWindow?
     
     init(window: UIWindow) {

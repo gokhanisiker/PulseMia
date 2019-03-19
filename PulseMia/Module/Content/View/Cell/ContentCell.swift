@@ -29,4 +29,8 @@ class ContentCell: UICollectionViewCell {
         dateLabel.text = content.date
     }
     
+    override func prepareForReuse() {
+        print("prepare for reuse for contentCell")
+    }
+    
 }

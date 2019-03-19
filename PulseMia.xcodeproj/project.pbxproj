@@ -184,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				357915FB2204958000A3D97B /* Content */,
+				3579164922060C7600A3D97B /* ContentDetails */,
 				357915F8220488DC00A3D97B /* AppDelegate */,
 			);
 			path = Module;
@@ -202,7 +203,6 @@
 			children = (
 				357916062204A91500A3D97B /* ViewModel */,
 				357915FC2204971900A3D97B /* View */,
-				3579164922060C7600A3D97B /* ContentDetails */,
 			);
 			path = Content;
 			sourceTree = "<group>";

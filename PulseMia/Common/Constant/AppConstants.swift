@@ -12,8 +12,8 @@ struct AppConstants {
     
     struct API {
         static let BaseURL = "http://dynamic.pulselive.com/test/native/"
-        static let PosterURL = "https://loremflickr.com/400/600/soccer"
-        static let PosterDetailURL = "https://loremflickr.com/600/400/soccer"
+        static let PosterURL = "https://loremflickr.com/400/600"
+        static let PosterDetailURL = "https://loremflickr.com/600/400"
     }
     
     struct ContentCollection {
